@@ -64,8 +64,8 @@ output_similarity = defaultdict(list)
 for pos,(k,v) in enumerate(key_list_vinyl.items()):
   years2 = [y for y in key_list_vinyl.keys()][pos+1:]
   if len(years2) > 0:
-    for ele in years2:
-      output_similarity[f"{k}-{y2}"].append(emb(k,ele,v,key_list_vinyl[ele]).tolist())
+    for y2 in years2:
+      output_similarity[f"{k}-{y2}"].append(emb(k,y2,v,key_list_vinyl[y2]).tolist())
   print(pos)
 
 #generate csv 
