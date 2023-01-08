@@ -1,4 +1,4 @@
-## NLP diachronic analysis of cultural artifacts and trends
+## NLP diachronic analysis of cultural artefacts and trends
 
 ###### Introduction
 
