@@ -27,6 +27,7 @@ punctuation = list(string.punctuation) + ["''", "``", "--"]
 path = '/content/drive/MyDrive/Tesi_Polifonia/dataset.csv'
 ds = pd.read_csv(path)
 dataset_dict = ds.to_dict('list')
+pattern = r'(?<!\w)vinyl.*?'
 
 yearly_texts = {y: [f"{r['title']}.\n {r['text']}" for i,r in ds.iterrows() if r['year'] == y] for y in set(ds['year'].tolist())}
 
@@ -35,7 +36,8 @@ word_count = {y: sum(len(t.split()) for t in l) for y,l in yearly_texts.items()}
 token_count = {y: sum(len(word_tokenize(t)) for t in l) for y,l in yearly_texts.items()} #token counter
 no_punkt_count = {y: len(list(ele for t in l for ele in word_tokenize(t) if ele not in punctuation)) for y,l in yearly_texts.items()} #tokens without punctuation counter
 char_count = {y: sum(len(t) for t in l) for y,l in yearly_texts.items()} #character counter
-v_freq = {y: sum(len(re.findall(r'(?<!\w)vinyl.*?', t.lower())) for t in l) for y,l in yearly_texts.items()} #vinyl frequency x year
+v_freq = {y: sum(len(re.findall(pattern, t.lower())) for t in l) for y,l in yearly_texts.items()} #'vinyl' frequency per year
+key_list_vinyl = {y: [s for sent in l for s in sent if re.search(pattern, s.lower())] for y,l in tokenised_texts.items()} #key sentences per year
 
 print('texts: ', txt_count)
 print('words: ', word_count)
