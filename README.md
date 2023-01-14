@@ -14,3 +14,6 @@ Having cleaned the corpus, we first extracted relevant metadata and statistics a
 In order to understand the evolution of narratives revolving around the vinyl format and how the context surrounding the target word had changed over time, sentence embeddings were generated and compared ([here](https://github.com/beatrice-f/Thesis-repo/blob/main/cos_similarity.py)) by leveraging models and tools provided by the SentenceTransformers framework. 
 
 Finally, to dig deeper into the results obtained by computing the semantic similarity among sentences, an analysis of lexical patterns and context was carried out with the aim of understanding how sentiments and meanings relating to our target word have evolved in time. 
+
+
+Content in this repository is licensed under a CC BY 4.0 license.
