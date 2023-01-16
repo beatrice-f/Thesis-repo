@@ -20,7 +20,8 @@ from collections import defaultdict
 #extract sentences 
 pattern = r'(?<!\w)vinyl.*?'
 
-dataset = pd.read_csv("/content/drive/MyDrive/Tesi_Polifonia/dataset.csv") #"/content/drive/MyDrive/CNR/Tesi_Polifonia/dataset.csv"
+path = "path"
+dataset = pd.read_csv(path) 
 y_texts = {y: [f"{r['title']}.\n {r['text']}" for i,r in dataset.iterrows() if r['year'] == y] for y in set(dataset['year'].tolist())}
 tokenised_texts = {y:[nltk.sent_tokenize(txt) for txt in t] for y,t in y_texts.items()} 
 key_list_vinyl = {y: [s for sent in l for s in sent if re.search(pattern, s.lower())] for y,l in tokenised_texts.items()}
