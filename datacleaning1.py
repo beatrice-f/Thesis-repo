@@ -20,7 +20,7 @@ from google.colab import files
 from collections import defaultdict
 
 #Step 1 -> extracting the documents:
-path_name = "/content/drive/MyDrive/CNR/Tesi_Polifonia/file_corpus/file_nexis_word" #"/content/drive/MyDrive/Tesi_Polifonia/file_corpus/file_nexis_word"
+path_name = "path" 
 pathName = os.chdir(path_name) 
 
 folders = []
