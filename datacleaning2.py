@@ -19,7 +19,7 @@ import pandas as pd
 from pandas.io.common import file_exists
 from collections import defaultdict
 
-file_path='/content/drive/MyDrive/Tesi_Polifonia/file_88_90'
+file_path= 'path'
 path = os.chdir(file_path)
 rtf_list= os.listdir(path)
 
@@ -55,4 +55,4 @@ df_dict['year'] += [l[1].split(f", ")[1] for l in clean_split]
 df_dict['text'] += list(set([txt.split(date)[1] for txt in documents for date in dates if date in txt]))
 
 dataframe= pd.DataFrame(df_dict).drop_duplicates()
-dataframe.to_csv('/content/drive/MyDrive/Tesi_Polifonia/dataset_2.csv',index=False)
+dataframe.to_csv('dataset_2.csv',index=False)
