@@ -24,7 +24,7 @@ from nltk.tokenize import word_tokenize
 nltk.download("punkt")
 punctuation = list(string.punctuation) + ["''", "``", "--"]
 
-path = '/content/drive/MyDrive/Tesi_Polifonia/dataset.csv'
+path = 'path'
 ds = pd.read_csv(path)
 dataset_dict = ds.to_dict('list')
 pattern = r'(?<!\w)vinyl.*?'
